@@ -1,4 +1,4 @@
-# pltf-doc-gen
+# pltfmdev-doc-gen
 
 A document generation service.
 
@@ -25,6 +25,8 @@ A document generation service.
 - `BITBUCKET_URL`
 - `BITBUCKET_USERNAME`
 - `BITBUCKET_PASSWORD`
+- `BITBUCKET_DOCUMENT_TEMPLATES_PROJECT`
+- `BITBUCKET_DOCUMENT_TEMPLATES_REPO`
 
 ## Reference
 
