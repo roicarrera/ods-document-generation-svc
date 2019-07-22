@@ -35,7 +35,7 @@ class DocGen implements Jooby.Module {
             .expireAfterWrite(Duration.ofDays(1))
             .removalListener({ key, graph, cause ->
                 def path = getPathForTemplatesVersion(key)
-                path.toFile().deleteDir()
+                FileUtils.deleteDirectory(path.toFile())
             })
             .build()
 
@@ -86,7 +86,7 @@ class DocGen implements Jooby.Module {
             throw e
         } finally {
             if (tmpDir) {
-                tmpDir.deleteDir()
+                FileUtils.deleteDirectory(tmpDir.toFile())
             }
         }
 
@@ -164,7 +164,7 @@ class DocGen implements Jooby.Module {
                     throw new IllegalStateException(result.stderr)
                 }
 
-                return documentPDFFile.getBytes()
+                return Files.readAllBytes(documentPDFFile)
             } catch (Throwable e) {
                 throw e
             } finally {

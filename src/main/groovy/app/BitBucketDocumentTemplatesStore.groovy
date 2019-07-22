@@ -39,7 +39,7 @@ class BitBucketDocumentTemplatesStore implements DocumentTemplatesStore {
 
         try {
             // Write content to a temp file
-            tmpFile.setBytes(zipArchiveContent)
+            Files.write(tmpFile, zipArchiveContent)
 
             // Create a ZipFile from the temp file
             ZipFile zipFile = new ZipFile(tmpFile.toFile())
