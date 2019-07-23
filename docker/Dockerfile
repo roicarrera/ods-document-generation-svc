@@ -6,8 +6,6 @@ WORKDIR /app
 COPY app.jar ./app.jar
 
 # Install wkhtmltopdf
-ENV WKHTMLTOPDF_VERSION 0.12.5
-
 RUN yum install -y xz xorg-x11-fonts-75dpi xorg-x11-fonts-Type1 openssl git-core fontconfig && \
     curl -kLO https://downloads.wkhtmltopdf.org/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz && \
     unxz wkhtmltox-0.12.4_linux-generic-amd64.tar.xz && \
