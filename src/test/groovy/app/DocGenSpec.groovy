@@ -13,6 +13,8 @@ import static org.hamcrest.Matchers.startsWith
 class DocGenSpec extends SpecHelper {
 
     def setup() {
+        env.set("BITBUCKET_DOCUMENT_TEMPLATES_PROJECT", "myProject")
+        env.set("BITBUCKET_DOCUMENT_TEMPLATES_REPO", "myRepo")
         env.set("BITBUCKET_URL", "http://localhost:9001")
     }
 
@@ -60,9 +62,6 @@ class DocGenSpec extends SpecHelper {
 
         when:
         def result = new DocGen().generate("InstallationReport", version, [ name: "Project Phoenix" ])
-
-        // TODO
-        new File("/tmp/out.pdf").setBytes(result)
 
         then:
         assertThat(new String(result), startsWith("%PDF-1.4\n"))

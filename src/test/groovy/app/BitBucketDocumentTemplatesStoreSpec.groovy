@@ -10,9 +10,9 @@ import static com.github.tomakehurst.wiremock.client.WireMock.*
 class BitBucketDocumentTemplatesStoreSpec extends SpecHelper {
 
     def setup() {
-        env.set("BITBUCKET_URL_SCHEME", "http")
-        env.set("BITBUCKET_URL_HOST", "localhost")
-        env.set("BITBUCKET_URL_PORT", "9001")
+        env.set("BITBUCKET_DOCUMENT_TEMPLATES_PROJECT", "myProject")
+        env.set("BITBUCKET_DOCUMENT_TEMPLATES_REPO", "myRepo")
+        env.set("BITBUCKET_URL", "http://localhost:9001")
     }
 
     def "getTemplatesForVersion"() {

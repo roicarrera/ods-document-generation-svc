@@ -10,6 +10,8 @@ import static org.hamcrest.Matchers.startsWith
 class AppSpec extends SpecHelper {
 
     def setup() {
+        env.set("BITBUCKET_DOCUMENT_TEMPLATES_PROJECT", "myProject")
+        env.set("BITBUCKET_DOCUMENT_TEMPLATES_REPO", "myRepo")
         env.set("BITBUCKET_URL", "http://localhost:9001")
     }
 
