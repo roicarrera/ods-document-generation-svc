@@ -54,8 +54,8 @@ apply plugin: "distribution"
 apply plugin: "groovy"
 apply plugin: "jooby"
 
-group = 'com.bix-digital.pltfmdev'
-version = '0.0.1-SNAPSHOT'
+group = 'org.ods'
+version = '0.1'
 mainClassName = "app.App"
 sourceCompatibility = 1.8
 
