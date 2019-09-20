@@ -30,9 +30,9 @@ odsPipeline(
   ]
 ) { context ->
   stageBuild(context)
-  //stageScanForSonarqube(context)
+  // stageScanForSonarqube(context)
   stageStartOpenshiftBuild(context)
-  stageDeployToOpenshift(context)
+  // stageDeployToOpenshift(context)
 }
 
 def stageBuild(def context) {
