@@ -1,6 +1,6 @@
 /* generated jenkins file used for building and deploying doc-gen in projects pltfmdev */
-def final projectId = 'pltfmdev'
-def final componentId = 'doc-gen'
+def final projectId = 'prov'
+def final componentId = 'docgen'
 def final credentialsId = "${projectId}-cd-cd-user-with-password"
 def sharedLibraryRepository
 def dockerRegistry
