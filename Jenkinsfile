@@ -1,6 +1,6 @@
 /* generated jenkins file used for building and deploying doc-gen in projects pltfmdev */
-def final projectId = 'pltfmdev'
-def final componentId = 'doc-gen'
+def final projectId = 'prov' // Change if you want to build it elsewhere ...
+def final componentId = 'docgen'
 def final credentialsId = "${projectId}-cd-cd-user-with-password"
 def sharedLibraryRepository
 def dockerRegistry
@@ -30,9 +30,7 @@ odsPipeline(
   ]
 ) { context ->
   stageBuild(context)
-  //stageScanForSonarqube(context)
   stageStartOpenshiftBuild(context)
-  stageDeployToOpenshift(context)
 }
 
 def stageBuild(def context) {
