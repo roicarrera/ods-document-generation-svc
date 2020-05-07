@@ -1,29 +1,23 @@
-def odsGitRef 
+def odsNamespace
+def odsGitRef
 def odsImageTag
 node {
+  odsNamespace = env.ODS_NAMESPACE ?: 'ods'
   odsImageTag = env.ODS_IMAGE_TAG ?: 'latest'
-  odsGitRef = env.ODS_GIT_REF ?: 'production'
+  odsGitRef = env.ODS_GIT_REF ?: 'master'
 }
 
 library("ods-jenkins-shared-library@${odsGitRef}")
 
-/*
-  See readme of shared library for usage and customization
-  @ https://github.com/opendevstack/ods-jenkins-shared-library/blob/master/README.md
-  eg. to create and set your own builder slave instead of 
-  the maven/gradle slave used here - the code of the slave can be found at
-  https://github.com/opendevstack/ods-project-quickstarters/tree/master/jenkins-slaves/maven
- */ 
 odsComponentPipeline(
-  imageStreamTag: 'cd/jenkins-slave-maven:${odsImageTag}',
-  sonarQubeBranch: "*",
+  imageStreamTag: "${odsNamespace}/jenkins-slave-maven:${odsImageTag}",
   branchToEnvironmentMapping: [
     '*': 'dev',
-	"${odsGitRef}" : 'test'
+    "${odsGitRef}" : 'test'
   ]
 ) { context ->
   stageBuild(context)
-  odsComponentStageScanWithSonar(context)
+  odsComponentStageScanWithSonar(context, [branch: '*'])
   odsComponentStageBuildOpenShiftImage(context)
 }
 
