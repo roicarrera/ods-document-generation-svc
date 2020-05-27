@@ -71,6 +71,7 @@ apply plugin: "application"
 apply plugin: "distribution"
 apply plugin: "groovy"
 apply plugin: "jooby"
+apply plugin: "jacoco"
 
 repositories {
   if (no_nexus) {
@@ -139,7 +140,7 @@ dependencies {
 }
 
 test {
-	outputs.dir snippetsDir
+  outputs.dir snippetsDir
 
   // Use overrides in conf/application.test.conf in ConfigFactory.load()
   // TODO: setting application.env should be enough, but apparently isn't
@@ -148,6 +149,14 @@ test {
 
   testLogging {
     showStandardStreams = true
+  }
+
+  finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+  reports {
+    xml.enabled true
   }
 }
 

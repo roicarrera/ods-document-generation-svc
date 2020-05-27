@@ -5,19 +5,19 @@ A document generation service that transforms document templates in a remote Bit
 ## Distribute
 
 ```
-./gradlew shadowJar
+make shadowJar
 ```
 
 ## Run
 
 ```
-./gradlew run
+make run
 ```
 
 ## Test
 
 ```
-./gradlew test
+make test
 ```
 
 ## Document Templates
