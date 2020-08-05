@@ -7,7 +7,7 @@
 - Add better error messages for bitbucket adapter ([#33](https://github.com/opendevstack/ods-document-generation-svc/pull/33))
 - Publish docgen svc to dockerhub ([#24](https://github.com/opendevstack/ods-document-generation-svc/issues/24))
 - Add a /health endpoint to understand service health ([#4](https://github.com/opendevstack/ods-document-generation-svc/issues/4))
-- Add Travis configuration ([#7](https://github.com/opendevstack/ods-document-generation-svc/pull/7/files))
+- Add Travis configuration ([#7](https://github.com/opendevstack/ods-document-generation-svc/pull/7))
 
 ### Changed
 - Set default branch to master instead of production ([#27](https://github.com/opendevstack/ods-document-generation-svc/pull/27))
