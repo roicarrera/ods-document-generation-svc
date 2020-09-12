@@ -1,3 +1,5 @@
+![ODS Document Generation Service tests](https://github.com/opendevstack/ods-document-generation-svc/workflows/Document%20Generation%20Service/badge.svg)
+
 # ODS Document Generation Service
 
 A document generation service that transforms document templates in a remote Bitbucket repository into PDF documents.
