@@ -15,7 +15,9 @@ odsComponentPipeline(
     '*' : 'dev',
     "${odsGitRef}" : 'test'
   ],
-  debug: true
+  debug: true,
+  resourceRequestMemory: '3Gi',
+  resourceLimitMemory: '3Gi'
 ) { context ->
   stageBuild(context)
   odsComponentStageScanWithSonar(context, [branch: '*'])
