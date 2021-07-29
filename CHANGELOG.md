@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Fix TIR and DTR documents are not properly indexed ([#55](https://github.com/opendevstack/ods-document-generation-svc/pull/55))
 
 
 ## [3.0] - 2020-08-11
