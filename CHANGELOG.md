@@ -1,7 +1,7 @@
 # Changelog
 
 ## Unreleased
-
+- Improve memory management and error handling ([#70](https://github.com/opendevstack/ods-document-generation-svc/pull/70))
 
 ## [4.0] - 2021-18-11
 
