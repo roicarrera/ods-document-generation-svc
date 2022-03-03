@@ -4,9 +4,11 @@
 - Fix TIR and DTR documents are not properly indexed ([#55](https://github.com/opendevstack/ods-document-generation-svc/pull/55))
 - Fix wkhtmltox hangs ([#66](https://github.com/opendevstack/ods-document-generation-svc/pull/66))
 - Improve memory management and error handling ([#70](https://github.com/opendevstack/ods-document-generation-svc/pull/70))
+- ODS AMI build failing due to broken x11 fonts package installation ([#74](https://github.com/opendevstack/ods-document-generation-svc/pull/74))
 
 ### Fixed
 - Github template tests fail in proxy environment ([#56](https://github.com/opendevstack/ods-document-generation-svc/issues/56))
+- 
 
 ## [4.0] - 2021-15-11
 
