@@ -1,7 +1,12 @@
 # Changelog
 
 ## Unreleased
+
+### Added
 - Improve memory management and error handling ([#70](https://github.com/opendevstack/ods-document-generation-svc/pull/70))
+ 
+### Fixed
+- ODS AMI build failing due to broken x11 fonts package installation ([#74](https://github.com/opendevstack/ods-document-generation-svc/pull/74))
 
 ## [4.0] - 2021-18-11
 
