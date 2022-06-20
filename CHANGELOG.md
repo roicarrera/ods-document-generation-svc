@@ -9,6 +9,7 @@
 ### Fixed
 - Github template tests fail in proxy environment ([#56](https://github.com/opendevstack/ods-document-generation-svc/issues/56))
 - Jcenter repository not available and build step fails ([#106](https://github.com/opendevstack/ods-document-generation-svc/issues/106))
+- Dependencies no more availables changed ([108](https://github.com/opendevstack/ods-document-generation-svc/issues/108))
 
 ## [4.0] - 2021-15-11
 
