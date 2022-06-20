@@ -69,6 +69,9 @@ repositories {
   if (no_nexus) {
     println("using repository 'mavenCentral', because property no_nexus=$no_nexus")
     mavenCentral()
+    maven() {
+      url "https://plugins.gradle.org/m2/"
+    }
   } else {
     println("using nexus repositories")
 
@@ -86,6 +89,10 @@ repositories {
         username = "${nexus_user}"
         password = "${nexus_pw}"
       }
+    }
+
+    maven() {
+      url "https://plugins.gradle.org/m2/"
     }
   }
 }
