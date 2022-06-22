@@ -20,7 +20,7 @@ repositories {
     if (no_nexus) {
         println("using repository 'mavenCentral', because property no_nexus=$no_nexus")
         mavenCentral()
-        maven {
+        maven() {
             url "https://plugins.gradle.org/m2/"
         }
     } else {

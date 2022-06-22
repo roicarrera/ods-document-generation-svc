@@ -46,12 +46,16 @@ def stageBuild(def context) {
                 retryNum=0
                 downloadResult=1
                 while [ 0 -ne $downloadResult ] && [ 5 -gt $retryNum ]; do
+                    set -x
                     ./gradlew dependencies
+                    set +x
                     downloadResult=$?
                     let "retryNum=retryNum+1"
                 done
 
+                set -x
                 ./gradlew clean test shadowJar --stacktrace --no-daemon
+                set +x
         ''',
         label : "gradle build",
         returnStatus: true
