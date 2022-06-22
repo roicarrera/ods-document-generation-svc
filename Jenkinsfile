@@ -42,7 +42,17 @@ def stageBuild(def context) {
       )
 
       def status = sh(
-        script: "./gradlew clean test shadowJar --stacktrace --no-daemon",
+        script: '''
+                retryNum=0
+                downloadResult=1
+                while [ 0 -ne $downloadResult ] && [ 5 -gt $retryNum ]; do
+                    ./gradlew dependencies
+                    downloadResult=$?
+                    let "retryNum=retryNum+1"
+                done
+
+                ./gradlew clean test shadowJar --stacktrace --no-daemon
+        ''',
         label : "gradle build",
         returnStatus: true
       )
