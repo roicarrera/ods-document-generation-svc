@@ -35,8 +35,11 @@ def stageBuild(def context) {
         curl -sSkLO https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
         tar vxf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
         mv wkhtmltox/bin/wkhtmlto* /usr/bin
-	java -version || echo 'ERROR: Could not get java version.'
-	./gradlew --version || echo 'ERROR: Could not get gradle version.'
+
+        ./gradlew --version || echo 'ERROR: Could not get gradle version.'
+        java -version || echo 'ERROR: Could not get java version.'
+        echo "$JAVA_HOME" || echo "ERROR: JAVA_HOME has NOT been set."
+
         """,
         label : "get and install wkhtml"
       )
