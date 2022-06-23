@@ -36,8 +36,9 @@ def stageBuild(def context) {
         tar vxf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
         mv wkhtmltox/bin/wkhtmlto* /usr/bin
 
-        ./gradlew --version || echo 'ERROR: Could not get gradle version.'
-        java -version || echo 'ERROR: Could not get java version.'
+        source use-j11.sh || echo 'ERROR: We could NOT setup jdk 11.'
+        ./gradlew --version || echo 'ERROR: Could NOT get gradle version.'
+        java -version || echo 'ERROR: Could NOT get java version.'
         echo "$JAVA_HOME" || echo "ERROR: JAVA_HOME has NOT been set."
 
         """,
