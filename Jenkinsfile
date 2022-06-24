@@ -39,7 +39,7 @@ def stageBuild(def context) {
         source use-j11.sh || echo 'ERROR: We could NOT setup jdk 11.'
         ./gradlew --version || echo 'ERROR: Could NOT get gradle version.'
         java -version || echo 'ERROR: Could NOT get java version.'
-        echo "$JAVA_HOME" || echo "ERROR: JAVA_HOME has NOT been set."
+        echo "JAVA_HOME: $JAVA_HOME" || echo "ERROR: JAVA_HOME has NOT been set."
 
         """,
         label : "get and install wkhtml"
@@ -47,6 +47,8 @@ def stageBuild(def context) {
 
       def status = sh(
         script: '''
+                source use-j11.sh
+
                 retryNum=0
                 downloadResult=1
                 while [ 0 -ne $downloadResult ] && [ 5 -gt $retryNum ]; do
