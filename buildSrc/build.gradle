@@ -60,3 +60,12 @@ dependencies {
     implementation "org.codehaus.plexus:plexus-utils:3.0.24"
     implementation "com.github.jengelman.gradle.plugins:shadow:5.2.0"
 }
+
+configurations.all {
+    resolutionStrategy.eachDependency {
+        // com.atlassian.platform:platform:3.5.2
+        if(it.requested.name == 'platform') {
+            it.useTarget 'com.atlassian.platform:platform:3.5.24'
+        }
+    }
+}
