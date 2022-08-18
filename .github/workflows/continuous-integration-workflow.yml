@@ -38,6 +38,10 @@ jobs:
     - name: copy created artifacts into docker context
       run: | 
         cp build/libs/*-all.jar ./docker/app.jar
+    - name: Show GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
     - name: Build docker image
       if: success()
       run: |
