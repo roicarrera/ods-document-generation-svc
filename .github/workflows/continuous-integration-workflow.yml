@@ -41,6 +41,8 @@ jobs:
     - name: Build docker image
       if: success()
       run: |
+        echo "HEAD_SHA: ${{ github.event.pull_request.head.sha }}"
+        echo "GITHUB_SHA: $GITHUB_SHA "
         COMMIT_AUTHOR=$(git --no-pager show -s --format='%an (%ae)' $GITHUB_SHA)
         COMMIT_MESSAGE=$(git log -1 --pretty=%B $GITHUB_SHA)
         COMMIT_TIME=$(git show -s --format=%ci $GITHUB_SHA)
