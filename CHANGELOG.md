@@ -1,12 +1,18 @@
 # Changelog
 
-## Unreleased
+## Unreleased - pointing release: 4.0.2
 
 ### Added
 - Improve memory management and error handling ([#70](https://github.com/opendevstack/ods-document-generation-svc/pull/70))
  
 ### Fixed
 - ODS AMI build failing due to broken x11 fonts package installation ([#74](https://github.com/opendevstack/ods-document-generation-svc/pull/74))
+- Fix TIR and DTR documents are not properly indexed ([#55](https://github.com/opendevstack/ods-document-generation-svc/pull/55))
+- Fix wkhtmltox hangs ([#66](https://github.com/opendevstack/ods-document-generation-svc/pull/66))
+- ODS AMI build failing due to broken x11 fonts package installation ([#74](https://github.com/opendevstack/ods-document-generation-svc/pull/74))
+- Github template tests fail in proxy environment ([#56](https://github.com/opendevstack/ods-document-generation-svc/issues/56))
+- Jcenter repository not available and build step fails ([#106](https://github.com/opendevstack/ods-document-generation-svc/issues/106))
+- Dependencies no more availables changed ([108](https://github.com/opendevstack/ods-document-generation-svc/issues/108))
 
 ## [4.0] - 2021-18-11
 
