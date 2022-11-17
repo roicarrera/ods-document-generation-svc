@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased - pointing release: 4.0.2
+## Unreleased
+
+## [4.1] - 2022-11-17
 
 ### Added
 - Improve memory management and error handling ([#70](https://github.com/opendevstack/ods-document-generation-svc/pull/70))
