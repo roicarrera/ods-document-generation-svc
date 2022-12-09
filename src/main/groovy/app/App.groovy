@@ -101,7 +101,33 @@ class App extends Jooby {
         })
         .produces(MediaType.json)
     }
+       get(this, "/roi", { req, rsp ->
+            def message = null
+            def status = "passing"
+            def statusCode = 200
 
+            try {
+
+            } catch (e) {
+                message = e.message
+                status = "failing"
+                statusCode = 500
+            }
+
+            def result = [
+                service: "docgen",
+                status: status,
+                time: new Date().toString()
+            ]
+
+            if (message) {
+                result.message = message
+            }
+
+            rsp.status(statusCode).send(result)
+        })
+        .produces(MediaType.json)
+    }
     private static final RES_PREFIX = '{"data":"'.getBytes('US-ASCII')
     private static final RES_SUFFIX = '"}'.getBytes('US-ASCII')
     private static final PDF_HEADER = '%PDF-1.4'
